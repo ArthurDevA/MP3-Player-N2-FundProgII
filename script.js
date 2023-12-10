@@ -66,3 +66,29 @@ function updateProgress() {
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
 }
+
+var progressBar = document.getElementById("progress");
+progressBar.addEventListener("click", (e) => {
+  const clickedTime = (e.offsetX / progressBar.clientWidth) * player.duration;
+  player.currentTime = clickedTime;
+  updateProgress();
+});
+
+var progressBar = document.getElementById("progress");
+let isDragging = false;
+
+progressBar.addEventListener("mousedown", () => {
+  isDragging = true;
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    const clickedTime = (e.offsetX / progressBar.clientWidth) * player.duration;
+    player.currentTime = clickedTime;
+    updateProgress();
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
