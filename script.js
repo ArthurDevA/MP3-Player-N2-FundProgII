@@ -1,10 +1,13 @@
 const songs = [
-  "bensound-clapandyell.mp3",
-  "bensound-dance.mp3",
-  "bensound-funkyelement.mp3",
-  "bensound-happiness.mp3",
-  "bensound-happyrock.mp3",
-  "bensound-thelounge.mp3",
+  "uiratsupu-quan-shan-tamakiniku-qing-woru-reruratsupu.mp3",
+  "zhen-shigureuitotemotsuyoigao-zhi-pv.mp3",
+  "adrenaline-trysail-covered-by-shigureui-da-kong-subaru.mp3",
+  "qun-qing-yoasobi-covered-by-shigureui.mp3",
+  "debiruziyanaimon-covered-by-shigureui-jiao-juan-watame.mp3",
+  "1000nian-sheng-kiteru-covered-by-shigureui.mp3",
+  "daishikiyudaishiyuki-covered-by-shigureui-tian-gong-kokoro.mp3",
+  "orizinarule-qu-su-sheng-rorishen-rekuiemu-shigureui-9sai.mp3",
+  "shiyanimasu-sos-covered-by-shigureui.mp3",
 ];
 const player = document.getElementById("player");
 
