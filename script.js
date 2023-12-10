@@ -15,7 +15,7 @@ const createSongList = () => {
   const list = document.createElement("ol");
   for (let i = 0; i < songs.length; i++) {
     const item = document.createElement("li");
-    item.appendChild(document.createTextNode(songs[i]));
+    item.appendChild(document.createTextNode(songs[i].slice(0,-4)));
     list.appendChild(item);
   }
   return list;
@@ -23,6 +23,7 @@ const createSongList = () => {
 
 const songList = document.getElementById("songList");
 songList.appendChild(createSongList());
+
 const links = document.querySelectorAll("li");
 for (const link of links) {
   link.addEventListener("click", setSong);
@@ -32,7 +33,7 @@ function setSong(e) {
   document.querySelector("#headphones").classList.remove("pulse");
 
   const source = document.getElementById("source");
-  source.src = "songs/" + e.target.innerText;
+  source.src = "songs/" + e.target.innerText + ".mp3";
   document.getElementById(
     "currentSong"
   ).innerText = `Now Playing:  ${e.target.innerText}`;

@@ -12,7 +12,7 @@
 
 5) Exibir na lista de músicas o título apenas, sem a extensção do arquivo.
 
-6) Explique, com suas prÃ³prias palavras, o que faz o seguinte trecho de código:
+6) Explique, com suas próprias palavras, o que faz o seguinte trecho de código:
 ```
 const createSongList = () => {
     const list = document.createElement("ol");
