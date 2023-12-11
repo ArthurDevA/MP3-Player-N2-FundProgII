@@ -19,7 +19,7 @@ const createSongList = () => {
     list.appendChild(item);
   }
   return list;
-};
+}
 
 const songList = document.getElementById("songList");
 songList.appendChild(createSongList());
@@ -58,37 +58,36 @@ const slider = document.getElementById("volumeSlider");
 slider.oninput = function (e) {
   const volume = e.target.value;
   player.volume = volume;
-};
+}
+
+const progressBar = document.getElementById("progress");
 
 function updateProgress() {
   if (player.currentTime > 0) {
-    const progressBar = document.getElementById("progress");
     progressBar.value = (player.currentTime / player.duration) * 100;
   }
 }
 
-var progressBar = document.getElementById("progress");
 progressBar.addEventListener("click", (e) => {
-  const clickedTime = (e.offsetX / progressBar.clientWidth) * player.duration;
+  const clickedTime = (e.offsetX  / progressBar.clientWidth) * player.duration;
   player.currentTime = clickedTime;
   updateProgress();
 });
 
-var progressBar = document.getElementById("progress");
 let isDragging = false;
 
 progressBar.addEventListener("mousedown", () => {
   isDragging = true;
 });
 
+progressBar.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
 document.addEventListener("mousemove", (e) => {
-  if (isDragging) {
+  if(isDragging) {
     const clickedTime = (e.offsetX / progressBar.clientWidth) * player.duration;
     player.currentTime = clickedTime;
     updateProgress();
   }
-});
-
-document.addEventListener("mouseup", () => {
-  isDragging = false;
 });
