@@ -80,7 +80,7 @@ progressBar.addEventListener("mousedown", () => {
   isDragging = true;
 });
 
-progressBar.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", () => {
   isDragging = false;
 });
 
